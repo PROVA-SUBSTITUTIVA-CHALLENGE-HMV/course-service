@@ -37,22 +37,7 @@ public class CourseController {
 
     @GetMapping("{id}")
     public ResponseEntity<CourseResponse> findById(@PathVariable Long id) {
-        final var courseResponse = courseService.byId(id);
+        final var courseResponse = courseService.findById(id);
         return ResponseEntity.ok(courseResponse);
-    }
-
-    @PutMapping("{id}")
-    public ResponseEntity<CourseResponse> update(
-            @PathVariable Long id,
-            @RequestBody CreateCourseRequest toUpdateCourseRequest) {
-        final var courseResponse = updateCourse.processById(id, toUpdateCourseRequest);
-        return ResponseEntity.ok(courseResponse);
-    }
-
-    @DeleteMapping("{id}")
-    public ResponseEntity<CourseResponse> deleteById(
-            @PathVariable(name = "id") Long id) {
-        deleteCourse.processById(id);
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }

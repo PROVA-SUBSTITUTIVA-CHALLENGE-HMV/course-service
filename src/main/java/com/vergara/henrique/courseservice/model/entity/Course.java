@@ -41,6 +41,7 @@ public class Course {
     private String imageUrl;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "course_id")
     private List<Module> modules;
 
 }
