@@ -8,6 +8,7 @@ spring:
     username: root
     password: root
     url: jdbc:postgresql://localhost:5432/course_service_db
+    initialization-mode: always
   jpa:
     hibernate:
       ddl-auto: create
