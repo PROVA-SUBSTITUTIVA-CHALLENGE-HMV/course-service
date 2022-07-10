@@ -40,7 +40,7 @@ public class Course {
     @Column(name = "url_imagem")
     private String imageUrl;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "course_id")
     private List<Module> modules;
 
